@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="reverse_string" pkg="ros_service_example" type="reverse_string" output="screen"/>
+</launch>

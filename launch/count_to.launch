@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<launch>
+    <node name="count_to" pkg="ros_service_example" type="count_to" output="screen"/>
+</launch>
