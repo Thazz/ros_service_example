@@ -23,5 +23,5 @@ To call service from command line use `rosservice call reverse_string 'The quick
 Accepts number as goal and counts to that number (e.g 24). During feedback returns current count (1, 2, 3, ...) and as result final number (24).
 
 ```
-roslaunch smartgv_chatter count_to.launch
+roslaunch ros_service_example count_to.launch
 ```

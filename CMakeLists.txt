@@ -71,10 +71,6 @@ add_dependencies(ex_add_numbers ${catkin_EXPORTED_TARGETS} ros_service_example_g
 target_link_libraries(ex_add_numbers ${catkin_LIBRARIES})
 set_target_properties(ex_add_numbers  PROPERTIES OUTPUT_NAME add_numbers)
 
-add_executable(ex_add_numbers_client src/add_numbers_client.cpp)
-add_dependencies(ex_add_numbers_client ${catkin_EXPORTED_TARGETS} ros_service_example_gencpp)
-target_link_libraries(ex_add_numbers_client ${catkin_LIBRARIES})
-set_target_properties(ex_add_numbers_client  PROPERTIES OUTPUT_NAME add_numbers_client)
 
 add_executable(ex_reverse_string src/reverse_string.cpp)
 add_dependencies(ex_reverse_string  ${catkin_EXPORTED_TARGETS} ros_service_example_gencpp) 

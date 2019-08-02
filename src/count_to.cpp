@@ -1,18 +1,18 @@
 #include <ros/ros.h>
 #include <actionlib/server/simple_action_server.h>
-#include <smartgv_chatter/CountToAction.h>
+#include <ros_service_example/CountToAction.h>
 
-namespace smartgv_chatter
+namespace ros_service_example
 {
 class CountTo
 {
 protected:
   ros::NodeHandle nh_;
-  actionlib::SimpleActionServer<smartgv_chatter::CountToAction> as_;
+  actionlib::SimpleActionServer<ros_service_example::CountToAction> as_;
   std::string action_name_;
 
-  smartgv_chatter::CountToFeedback feedback_;
-  smartgv_chatter::CountToResult result_;
+  ros_service_example::CountToFeedback feedback_;
+  ros_service_example::CountToResult result_;
 
 public:
   CountTo(std::string name)
@@ -25,7 +25,7 @@ public:
   {
   }
 
-  void executeCallback(const smartgv_chatter::CountToGoalConstPtr& goal)
+  void executeCallback(const ros_service_example::CountToGoalConstPtr& goal)
   {
     ROS_INFO_STREAM(action_name_ << " started");
 
@@ -61,13 +61,13 @@ public:
     }
   }
 };
-}  // namespace smartgv_chatter
+}  // namespace ros_service_example
 
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "count_to");
 
-  smartgv_chatter::CountTo cta("count_to");
+  ros_service_example::CountTo cta("count_to");
   ros::spin();
 
   return 0;
