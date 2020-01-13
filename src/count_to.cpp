@@ -8,16 +8,23 @@ class CountTo
 {
 protected:
   ros::NodeHandle nh_;
+  ros::NodeHandle private_nh_;
   actionlib::SimpleActionServer<ros_service_example::CountToAction> as_;
   std::string action_name_;
+  int loop_hz_;
 
   ros_service_example::CountToFeedback feedback_;
   ros_service_example::CountToResult result_;
 
 public:
-  CountTo(std::string name)
-    : as_(nh_, name, boost::bind(&CountTo::executeCallback, this, _1), false), action_name_(name)
+  CountTo(ros::NodeHandle& nh, const std::string& name)
+    : nh_(nh)
+    , private_nh_("~")
+    , as_(nh_, name, boost::bind(&CountTo::executeCallback, this, _1), false)
+    , action_name_(name)
+    , loop_hz_(0)
   {
+    private_nh_.param<int>("loop_hz", loop_hz_, 10);
     as_.start();
   }
 
@@ -66,8 +73,9 @@ public:
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "count_to");
+  ros::NodeHandle nh;
 
-  ros_service_example::CountTo cta("count_to");
+  ros_service_example::CountTo cta(nh, "count_to");
   ros::spin();
 
   return 0;
