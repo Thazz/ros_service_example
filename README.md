@@ -1,7 +1,6 @@
-# ros_service_example
-![](https://github.com/Thazz/ros_service_example/workflows/.github/workflows/ros_cpp.yml/badge.svg)
 ![](https://github.com/Thazz/ros_service_example/workflows/CI/badge.svg)
-![](https://github.com/Thazz/ros_service_example/workflows/CI/badge.svg?event=pull)
+
+# ros_service_example
 Example nodes for ROS service and action server
 
 ## Service
