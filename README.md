@@ -1,4 +1,5 @@
 ![](https://github.com/Thazz/ros_service_example/workflows/CI/badge.svg)
+[![CircleCI](https://circleci.com/gh/Thazz/ros_service_example.svg?style=svg)](https://circleci.com/gh/Thazz/ros_service_example)
 
 # ros_service_example
 Example nodes for ROS service and action server
