@@ -35,6 +35,7 @@
 #include <ros/ros.h>
 #include <actionlib/server/simple_action_server.h>
 #include <ros_service_example/CountToAction.h>
+#include <string>
 
 namespace ros_service_example
 {

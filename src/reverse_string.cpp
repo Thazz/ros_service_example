@@ -35,6 +35,7 @@
 #include <ros/ros.h>
 #include <ros_service_example/ReverseString.h>
 #include <algorithm>
+#include <string>
 
 bool reverseString(ros_service_example::ReverseString::Request& req, ros_service_example::ReverseString::Response& res)
 {
