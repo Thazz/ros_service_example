@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: lint-action check
-        uses: CyberZHG@github-action-python-lint@master
+        uses: CyberZHG/github-action-cpp-lint@master
     env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
