@@ -1,8 +1,13 @@
-workflow "C++ Lint" {
-  on = "push, pull_request"
-  resolves = ["lint-action"]
-}
+name: Lint2
 
-action "lint-action" {
-  uses = "CyberZHG@github-action-python-lint@master"
-}
+on: [push, pull_request]
+
+jobs:
+  cpp-lint:
+    name: lint-action
+    runs-on: ubuntu-18.04
+    steps:
+      - name: lint-action check
+        uses: CyberZHG@github-action-python-lint@master
+    env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
