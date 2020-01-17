@@ -11,7 +11,7 @@ jobs:
               ROS_DISTRO: melodic,
               ROS_REPO: main,
               CLANG_FORMAT_CHECK: file,
-              CLANG_TIDY: file,
+              CLANG_TIDY: true
             }
     runs-on: ubuntu-18.04
     steps:
