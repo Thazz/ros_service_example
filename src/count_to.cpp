@@ -64,8 +64,7 @@ public:
   }
 
   ~CountTo()
-  {
-  }
+  = default;
 
   void executeCallback(const ros_service_example::CountToGoalConstPtr& goal)
   {
