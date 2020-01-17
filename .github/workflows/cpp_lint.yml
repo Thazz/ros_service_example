@@ -7,8 +7,10 @@ jobs:
     name: cpp-check
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v1  
-      - uses: Thazz/cpp_check_action@experimental
+      - name: Git checkout 
+        uses: actions/checkout@v1  
+      - name: Lint
+        uses: Thazz/cpp_check_action@experimental
     env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MY_NAME: Gregor 
