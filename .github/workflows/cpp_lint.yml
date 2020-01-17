@@ -1,0 +1,14 @@
+name: Lint
+
+on: [push]
+
+jobs:
+  cpp-check:
+    name: cpp-check
+    runs-on: ubuntu-18.04
+    steps:
+      - name: cpp check action 
+        uses: Thazz/cpp_check_action@experimantal
+    env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MY_NAME: Gregor 
