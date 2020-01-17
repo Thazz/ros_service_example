@@ -12,7 +12,6 @@ jobs:
               ROS_REPO: main,
               CLANG_FORMAT_CHECK: file,
               CLANG_TIDY: file,
-              CLANG_FORMAT_VERSION: 6.0,
             }
     runs-on: ubuntu-18.04
     steps:
