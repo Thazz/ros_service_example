@@ -1,50 +1,59 @@
 ---
-Checks:          '-*,
-                  performance-*,
-                  llvm-namespace-comment,
-                  modernize-redundant-void-arg,
-                  modernize-use-nullptr,
-                  modernize-use-default,
-                  modernize-use-override,
-                  modernize-loop-convert,
-                  readability-named-parameter,
-                  readability-redundant-smartptr-get,
-                  readability-redundant-string-cstr,
-                  readability-simplify-boolean-expr,
-                  readability-container-size-empty,
-                  readability-identifier-naming,
-                  '
-HeaderFilterRegex: ''
+Checks: "-*,
+  performance-*,
+  modernize-*,
+  llvm-namespace-comment,
+  readability-named-parameter,
+  readability-non-const-parameter,
+  readability-redundant-smartptr-get,
+  readability-redundant-string-cstr,
+  readability-redundant-string-init,
+  readability-simplify-boolean-expr,
+  readability-string-compare,
+  readability-container-size-empty,
+  readability-identifier-naming,
+  bugprone-bool-pointer-implicit-conversion,
+  bugprone-string-constructor,
+  bugprone-string-integer-assignment,
+  bugprone-suspicious-semicolon,
+  bugprone-suspicious-string-compare,
+  bugprone-swapped-arguments,
+  bugprone-terminating-continue,
+  bugprone-not-null-terminated-result,
+  bugprone-integer-division,
+  bugprone-infinite-loop,
+  bugprone-too-small-loop-variable,
+  bugprone-throw-keyword-missing,
+  misc-unused-parameters,
+  cppcoreguidelines-init-variables,
+  cppcoreguidelines-pro-type-member-init
+  "
+HeaderFilterRegex: ""
 AnalyzeTemporaryDtors: false
 CheckOptions:
-  - key:             llvm-namespace-comment.ShortNamespaceLines
-    value:           '10'
-  - key:             llvm-namespace-comment.SpacesBeforeComments
-    value:           '2'
-  - key:             readability-braces-around-statements.ShortStatementLines
-    value:           '2'
-  # type names
-  - key:             readability-identifier-naming.ClassCase
-    value:           CamelCase
-  - key:             readability-identifier-naming.EnumCase
-    value:           CamelCase
-  - key:             readability-identifier-naming.UnionCase
-    value:           CamelCase
-  # method names
-  - key:             readability-identifier-naming.MethodCase
-    value:           camelBack
-  # variable names
-  - key:             readability-identifier-naming.VariableCase
-    value:           lower_case
-  - key:             readability-identifier-naming.ClassMemberSuffix
-    value:           '_'
-  # const static or global variables are UPPER_CASE
-  - key:             readability-identifier-naming.EnumConstantCase
-    value:           UPPER_CASE
-  - key:             readability-identifier-naming.StaticConstantCase
-    value:           UPPER_CASE
-  - key:             readability-identifier-naming.ClassConstantCase
-    value:           UPPER_CASE
-  - key:             readability-identifier-naming.GlobalVariableCase
-    value:           UPPER_CASE
-...
+  - key: llvm-namespace-comment.ShortNamespaceLines
+    value: "10"
+  - key: llvm-namespace-comment.SpacesBeforeComments
+    value: "2"
+  - key: readability-braces-around-statements.ShortStatementLines
+    value: "2"
+  - key: readability-identifier-naming.ClassCase
+    value: CamelCase
+  - key: readability-identifier-naming.EnumCase
+    value: CamelCase
+  - key: readability-identifier-naming.UnionCase
+    value: CamelCase
+  - key: readability-identifier-naming.MethodCase
+    value: camelBack
+  - key: readability-identifier-naming.VariableCase
+    value: lower_case
+  - key: readability-identifier-naming.ClassMemberSuffix
+    value: "_"
+  - key: readability-identifier-naming.EnumConstantCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.StaticConstantCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.ClassConstantCase
+    value: UPPER_CASE
+  - key: readability-identifier-naming.GlobalVariableCase
+    value: UPPER_CASE
