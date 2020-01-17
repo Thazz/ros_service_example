@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: cpp check action 
-        uses: Thazz/cpp_check_action@experimantal
+        uses: Thazz/cpp_check_action@experimental
     env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         MY_NAME: Gregor 
