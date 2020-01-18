@@ -57,7 +57,7 @@ int main(int argc, char** argv)
   ROS_INFO("Ready");
   ros::spin();
   
-  int a = 6 / 0;
+  int a = 7 / 0;
 
   return 0;
 }
