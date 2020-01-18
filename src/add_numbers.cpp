@@ -56,6 +56,8 @@ int main(int argc, char** argv)
   ros::ServiceServer service = nh.advertiseService("add_numbers", add);
   ROS_INFO("Ready");
   ros::spin();
+  
+  int a = 6 / 0;
 
   return 0;
 }
