@@ -10,10 +10,9 @@ jobs:
           - {
               ROS_DISTRO: melodic,
               ROS_REPO: main,
-              CLANG_FORMAT_CHECK: file,
               CLANG_TIDY: "true",
               CLANG_TIDY_ARGS: "-format-style=file",
-              VERBOSE_OUTPUT: "true",
+              VERBOSE_OUTPUT: true,
             }
     runs-on: ubuntu-18.04
     steps:
