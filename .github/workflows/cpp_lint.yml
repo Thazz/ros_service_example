@@ -2,8 +2,8 @@ name: Lint
 
 on:
   push:
-    #branches:
-    #  - develop
+    branches:
+      - experimental
     paths:
       - "./*"
 
@@ -24,8 +24,8 @@ jobs:
           cat ./files_modified.json
           cat ./files_added.json
           cat ./files_deleted.json
-      - name: CppCheck
-        uses: Thazz/cpp_check_action@experimental
-    env:
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      MY_NAME: Thazz
+    #  - name: CppCheck
+    #    uses: Thazz/cpp_check_action@experimental
+    #env:
+    #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    #  MY_NAME: Thazz
