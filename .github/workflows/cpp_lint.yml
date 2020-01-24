@@ -7,14 +7,22 @@ jobs:
     name: cpp-check
     runs-on: ubuntu-18.04
     steps:
-      - name: Git checkout
+      - name: Git Checkout
         uses: actions/checkout@v1
-      - name: file_changes
+      - name: Changed Files
         uses: trilom/file-changes-action@v1
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Parse Changed Files
+        run: |
+          MOD_FILES=$(jq .[] $HOME/files_modified.json | tr '\n' ' ');
+          NEW_FILES=$(jq .[] $HOME/files_added.json | tr '\n' ' ');
+          FILE_LIST="$MOD_FILES $NEW_FILES"
+          echo ::set-env name=changed.FILE_LIST::"$FILE_LIST"
       - name: CppCheck
         uses: Thazz/cpp_check_action@experimental
+        with:
+          FILE_LIST: ${{ changed.FILE_LIST }}
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       MY_NAME: Thazz
