@@ -18,4 +18,4 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - uses: "ros-industrial/industrial_ci@master"
-        env: ${{matrix.env}}
+        env: ${{ matrix.env }}
