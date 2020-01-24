@@ -18,8 +18,10 @@ jobs:
             echo "$f"
           done
 
+          MOF_FILES_JS=$( jq .[] ${{ steps.file_changes.outputs.files_modified}} | tr '\n' ' ')
           MOD_FILES=$(jq .[] $HOME/files_modified.json | tr '\n' ' ');
           NEW_FILES=$(jq .[] $HOME/files_added.json | tr '\n' ' ');
 
           echo "New files: $NEW_FILES"
-          echo "Mod file: $MOD_FILES"
+          echo "Mod files: $MOD_FILES"
+          echo "Mod files js: $MOD_FILES_JS"
