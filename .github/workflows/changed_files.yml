@@ -18,7 +18,11 @@ jobs:
             echo "$f"
           done
 
-          echo "Modified files 2:"
-          while IFS= read -r line; do
-            echo "$line"
-          done <"$HOME/files_modified.json"
+          echo "1" 
+          jq '.' $HOME/files_modified.json"
+
+          echo "2" 
+          jq '.' HOME/files_modified.json
+
+          echo "3" 
+          cat HOME/files_modified.json | jq '.'
