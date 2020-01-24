@@ -112,6 +112,7 @@ int main(int argc, char** argv)
   ros::spin();
 
   int b;
+  int c = 5 / b;
 
   return 0;
 }
