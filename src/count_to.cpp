@@ -111,8 +111,5 @@ int main(int argc, char** argv)
   ros_service_example::CountTo cta(nh, "count_to");
   ros::spin();
 
-  int b;
-  int c = 5 / b;
-
   return 0;
 }
