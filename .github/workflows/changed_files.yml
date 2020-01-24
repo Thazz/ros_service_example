@@ -1,0 +1,28 @@
+name: changed-files
+
+on:
+  push:
+    branches:
+      - experimental
+    paths:
+      - "./*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - id: file_changes
+        uses: trilom/file-changes-action@v1
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: test
+        run: |
+          ls $HOME
+          cat $HOME/files.json
+          cat $HOME/files_modified.json
+          cat $HOME/files_added.json
+          cat $HOME/files_deleted.json
+          echo '${{ steps.file_changes.outputs.files_modified}}'
+          echo '${{ steps.file_changes.outputs.files_added}}'
+          echo '${{ steps.file_changes.outputs.files_deleted}}'

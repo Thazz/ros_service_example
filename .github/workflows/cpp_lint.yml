@@ -1,11 +1,6 @@
 name: Lint
 
-on:
-  push:
-    branches:
-      - experimental
-    paths:
-      - "./*"
+on: [push, pull_request]
 
 jobs:
   cpp-check:
@@ -14,18 +9,8 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v1
-      - name: File Changes
-        uses: trilom/file-changes-action@v1
-        with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-      - name: test
-        run: |
-          cat ./files.json
-          cat ./files_modified.json
-          cat ./files_added.json
-          cat ./files_deleted.json
-    #  - name: CppCheck
-    #    uses: Thazz/cpp_check_action@experimental
-    #env:
-    #  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #  MY_NAME: Thazz
+      - name: CppCheck
+        uses: Thazz/cpp_check_action@experimental
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      MY_NAME: Thazz
