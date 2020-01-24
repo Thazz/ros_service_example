@@ -21,9 +21,9 @@ jobs:
           echo ::set-env name=FILE_LIST::"$FILE_LIST"
       - name: CppCheck
         uses: Thazz/cpp_check_action@experimental
-        with:
-          FILE_LIST: ${{ FILE_LIST }}
-          FAIL_ON_WARN: 1
+        #with:
+        #  FILE_LIST: ${{ FILE_LIST }}
+        #  FAIL_ON_WARN: 1
 
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
