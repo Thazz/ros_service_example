@@ -1,11 +1,13 @@
 name: changed-files
 
-on:
-  push:
-    branches:
-      - experimental
-    paths:
-      - "./*"
+#on:
+#  push:
+#    branches:
+#      - experimental
+#    paths:
+#      - "./*"
+
+on: [push]
 
 jobs:
   build:
