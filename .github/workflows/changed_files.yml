@@ -19,7 +19,7 @@ jobs:
           done
 
           echo "1" 
-          jq '.' $HOME/files_modified.json"
+          jq '.' "$HOME/files_modified.json"
 
           echo "2" 
           jq '.' HOME/files_modified.json
