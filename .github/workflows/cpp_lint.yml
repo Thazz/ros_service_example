@@ -24,8 +24,9 @@ jobs:
       - name: CppCheck
         uses: Thazz/cpp_check_action@experimental
         with:
-          pedantic: 1
+          pedantic: 0
           files: ${{ steps.parser.outputs.files }}
+          check_std: "c++11"
 
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
