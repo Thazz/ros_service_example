@@ -22,7 +22,7 @@ jobs:
       - name: CppCheck
         uses: Thazz/cpp_check_action@experimental
         with:
-          FAIL_ON_WARN: 1
+          PEDANTIC: 1
         #  FILE_LIST: ${{ FILE_LIST }}
         #  FAIL_ON_WARN: 1
 
