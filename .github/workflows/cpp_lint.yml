@@ -18,11 +18,13 @@ jobs:
           MOD_FILES=$(jq .[] $HOME/files_modified.json | tr '\n' ' ');
           NEW_FILES=$(jq .[] $HOME/files_added.json | tr '\n' ' ');
           FILE_LIST="$MOD_FILES $NEW_FILES"
-          echo ::set-env name=changed.FILE_LIST::"$FILE_LIST"
+          echo ::set-env name=FILE_LIST::"$FILE_LIST"
       - name: CppCheck
         uses: Thazz/cpp_check_action@experimental
         with:
-          FILE_LIST: ${{ changed.FILE_LIST }}
+          FILE_LIST: ${{ FILE_LIST }}
+          FAIL_ON_WARN: 1
+
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       MY_NAME: Thazz
