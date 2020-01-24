@@ -47,6 +47,9 @@ bool reverseString(ros_service_example::ReverseString::Request& req, ros_service
   return true;
 }
 
+void doNothing()
+{}
+
 int main(int argc, char** argv)
 {
   ros::init(argc, argv, "add_numbers");
