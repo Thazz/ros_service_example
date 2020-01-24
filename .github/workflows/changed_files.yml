@@ -2,10 +2,10 @@ name: changed-files
 
 on:
   push:
-#    branches:
-#      - experimental
-#    paths:
-#      - "./*"
+    branches:
+      - experimental
+    paths:
+      - "./*"
 
 #on: [push]
 
@@ -21,10 +21,17 @@ jobs:
       - name: test
         run: |
           ls ./
+          echo "cat files.json"
           cat $HOME/files.json
+          echo "cat files_modified.json"
           cat $HOME/files_modified.json
+          echo "cat files_added.json"
           cat $HOME/files_added.json
+          echo "cat files_deleted.json"
           cat $HOME/files_deleted.json
+          echo "modified"
           echo '${{ steps.file_changes.outputs.files_modified}}'
+          echo "added"
           echo '${{ steps.file_changes.outputs.files_added}}'
+          echo "deleted"
           echo '${{ steps.file_changes.outputs.files_deleted}}'
