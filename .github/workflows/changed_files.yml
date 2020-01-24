@@ -21,8 +21,5 @@ jobs:
           echo "1" 
           jq '.' "$HOME/files_modified.json"
 
-          echo "2" 
-          jq '.' HOME/files_modified.json
-
           echo "3" 
           cat HOME/files_modified.json | jq '.'
