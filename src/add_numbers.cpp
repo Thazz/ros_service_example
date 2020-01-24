@@ -54,7 +54,7 @@ int main(int argc, char** argv)
   ros::NodeHandle nh;
 
   ros::ServiceServer service = nh.advertiseService("add_numbers", add);
-  ROS_INFO("Ready");
+  ROS_INFO("Service initialized");
   ros::spin();
 
   return 0;
