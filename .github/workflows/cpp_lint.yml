@@ -9,6 +9,10 @@ jobs:
     steps:
       - name: Git checkout
         uses: actions/checkout@v1
+      - name: file_changes
+        uses: trilom/file-changes-action@v1
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
       - name: CppCheck
         uses: Thazz/cpp_check_action@experimental
     env:
