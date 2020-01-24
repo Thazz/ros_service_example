@@ -1,13 +1,6 @@
 name: changed-files
 
-on:
-  push:
-    branches:
-      - experimental
-    #paths:
-    #  - "./*"
-
-#on: [push]
+on: [push]
 
 jobs:
   build:
@@ -20,20 +13,7 @@ jobs:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
       - name: test
         run: |
-          ls ./
-          echo "cat files.json\n"
-          cat $HOME/files.json
-          echo "cat files_modified.json\n"
-          cat $HOME/files_modified.json
-          echo "cat files_added.json\n"
-          cat $HOME/files_added.json
-          echo "cat files_deleted.json\n"
-          cat $HOME/files_deleted.json
-          echo "modified\n"
-          echo '${{ steps.file_changes.outputs.files_modified}}'
-          echo "added\n"
-          echo '${{ steps.file_changes.outputs.files_added}}'
-          echo "deleted\n"
-          echo '${{ steps.file_changes.outputs.files_deleted}}'
-          echo "cat changed files"
-          cat .github/workflows/changed_files.yml
+          echo "Modified files:"
+          for f in steps.file_changes.outputs.files_modified; do
+            echo "$f"
+          done
