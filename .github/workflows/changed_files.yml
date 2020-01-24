@@ -18,8 +18,8 @@ jobs:
             echo "$f"
           done
 
-          echo "1" 
-          jq '.' "$HOME/files_modified.json"
+          MOD_FILES=$(jq .[] $HOME/files_modified.json | tr '\n' ' ');
+          NEW_FILES=$(jq .[] $HOME/files_added.json | tr '\n' ' ');
 
-          echo "3" 
-          cat HOME/files_modified.json | jq '.'
+          echo "New files: $NEW_FILES"
+          echo "Mod file: $MOD_FILES"
