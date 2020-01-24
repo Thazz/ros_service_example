@@ -23,8 +23,7 @@ jobs:
         uses: Thazz/cpp_check_action@experimental
         with:
           pedantic: 1
-        #  FILE_LIST: ${{ FILE_LIST }}
-        #  FAIL_ON_WARN: 1
+          files: ${{ FILE_LIST }}
 
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
