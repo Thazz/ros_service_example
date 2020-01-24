@@ -21,7 +21,8 @@ jobs:
           echo ::set-env name=FILE_LIST::"$FILE_LIST"
       - name: CppCheck
         uses: Thazz/cpp_check_action@experimental
-        #with:
+        with:
+          FAIL_ON_WARN: 1
         #  FILE_LIST: ${{ FILE_LIST }}
         #  FAIL_ON_WARN: 1
 
