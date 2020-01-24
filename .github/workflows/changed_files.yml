@@ -14,6 +14,11 @@ jobs:
       - name: test
         run: |
           echo "Modified files:"
-          for f in steps.file_changes.outputs.files_modified; do
+          for f in ${{ steps.file_changes.outputs.files_modified}}; do
             echo "$f"
           done
+
+          echo "Modified files 2:"
+          while IFS= read -r line; do
+            echo "$line"
+          done <"$HOME/files_modified.json"
