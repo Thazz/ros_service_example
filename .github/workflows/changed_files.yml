@@ -18,7 +18,7 @@ jobs:
             echo "$f"
           done
 
-          MOF_FILES_JS=$(echo ${{ steps.file_changes.outputs.files_modified}} | jq .[]  | tr '\n' ' ')
+          MOF_FILES_JS=$(echo "${{ steps.file_changes.outputs.files_modified}}"" | jq .[]  | tr '\n' ' ')
           MOD_FILES=$(jq .[] $HOME/files_modified.json | tr '\n' ' ');
           NEW_FILES=$(jq .[] $HOME/files_added.json | tr '\n' ' ');
 
